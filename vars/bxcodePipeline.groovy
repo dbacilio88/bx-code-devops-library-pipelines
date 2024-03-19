@@ -51,6 +51,7 @@ def call(
             break;
         case IConstants.PipelineVersion.GravitonPipeline.value():
             echo "GravitonPipeline: $version"
+            bxcodePipelineGit(builder,wout,smc,version)
             break;
         case IConstants.PipelineVersion.GravitonPipelineDeploy.value():
             echo "GravitonPipelineDeploy: $version"
