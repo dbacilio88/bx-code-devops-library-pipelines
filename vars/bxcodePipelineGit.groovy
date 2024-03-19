@@ -7,7 +7,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
     def solutionProject = ""
 
     pipeline {
-        agent none
+        agent any
         tools {
             maven: 'maven'
             gradle: 'gradle'
