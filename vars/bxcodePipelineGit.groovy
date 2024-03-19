@@ -20,39 +20,110 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
         }
         stages {
             stage("Setting Up & Initialising Env") {
-                echo "Setting Up & Initialising Env $version"
+                agent {
+                    label agentLabel
+
+                }
+                steps {
+                    script {
+                        echo "Setting Up & Initialising Env $version"
+                    }
+                }
             }
             stage("Unit Test") {
-                echo "Unit Test $version"
+                agent {
+                    label agentLabel
+
+                }
+                steps {
+                    script {
+                        echo "Unit Test $version"
+                    }
+                }
             }
             stage("Dependencies, Code Scan & Bugs") {
-                echo "Dependencies, Code Scan & Bugs $version"
+                agent none
+                steps {
+                    script {
+                        echo "Dependencies, Code Scan & Bugs $version"
+                    }
+                }
+
             }
             stage('SonarQube Quality Gate') {
-                echo "SonarQube Quality Gate $version"
+                agent {
+                    label agentLabel
+
+                }
+                steps {
+                    script {
+                        echo "SonarQube Quality Gate $version"
+                    }
+                }
             }
             stage("Build Image") {
-                echo "Build Image $version"
+                agent {
+                    label agentLabel
+
+                }
+                steps {
+                    script {
+                        echo "Build Image $version"
+                    }
+                }
             }
             stage('Deploy to Dev') {
-                echo "Deploy to Dev $version"
+                agent none
+                steps {
+                    script {
+                        echo "Deploy to Dev $version"
+                    }
+                }
             }
             stage('Deploy to Test') {
-                echo "Deploy to Test $version"
+                agent none
+                steps {
+                    script {
+                        echo "Deploy to Test $version"
+                    }
+                }
             }
             stage('Deploy to UAT') {
-                echo "Deploy to UAT $version"
+                agent none
+                steps {
+                    script {
+                        echo "Deploy to UAT $version"
+                    }
+                }
             }
             stage('Deploy to Prod') {
-                echo "Deploy to Prod $version"
+                agent none
+                steps {
+                    script {
+                        echo "Deploy to Prod $version"
+                    }
+                }
             }
             stage('Release') {
-                echo "Release $version"
+                agent {
+                    label agentLabel
+                }
+                steps {
+                    script {
+                        echo "Release $version"
+                    }
+                }
             }
             stage('Archive Build') {
-                echo "Archive Build $version"
+                agent {
+                    label agentLabel
+                }
+                steps {
+                    script {
+                        echo "Archive Build $version"
+                    }
+                }
             }
         }
     }
-
 }
