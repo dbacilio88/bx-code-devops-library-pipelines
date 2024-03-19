@@ -16,10 +16,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
         }
         stages {
             stage("Setting Up & Initialising Env") {
-                agent {
-                    label agentLabel
-
-                }
+                agent none
                 steps {
                     script {
                         echo "Setting Up & Initialising Env $version"
@@ -27,10 +24,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
                 }
             }
             stage("Unit Test") {
-                agent {
-                    label agentLabel
-
-                }
+                agent none
                 steps {
                     script {
                         echo "Unit Test $version"
@@ -47,10 +41,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
 
             }
             stage('SonarQube Quality Gate') {
-                agent {
-                    label agentLabel
-
-                }
+                agent none
                 steps {
                     script {
                         echo "SonarQube Quality Gate $version"
@@ -58,10 +49,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
                 }
             }
             stage("Build Image") {
-                agent {
-                    label agentLabel
-
-                }
+                agent none
                 steps {
                     script {
                         echo "Build Image $version"
@@ -101,9 +89,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
                 }
             }
             stage('Release') {
-                agent {
-                    label agentLabel
-                }
+                agent none
                 steps {
                     script {
                         echo "Release $version"
@@ -111,9 +97,7 @@ def call(PipelineBuilder builder, boolean wout, boolean smc, String version) {
                 }
             }
             stage('Archive Build') {
-                agent {
-                    label agentLabel
-                }
+                agent none
                 steps {
                     script {
                         echo "Archive Build $version"
