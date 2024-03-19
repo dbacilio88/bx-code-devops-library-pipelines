@@ -13,52 +13,52 @@ def call(
 
 
     switch (version) {
-        case IConstants.PipelineVersion.GitlabBased:
+        case IConstants.PipelineVersion.GitlabBased.value():
             echo "GitlabBased: $version"
             break;
-        case IConstants.PipelineVersion.GitflowBased:
+        case IConstants.PipelineVersion.GitflowBased.value():
             echo "GitflowBased: $version"
             break;
-        case IConstants.PipelineVersion.Backend:
+        case IConstants.PipelineVersion.Backend.value():
             echo "Backend: $version"
             break;
-        case IConstants.PipelineVersion.V4:
+        case IConstants.PipelineVersion.V4.value():
             echo "V4: $version"
             break;
-        case IConstants.PipelineVersion.PROPERTY:
+        case IConstants.PipelineVersion.PROPERTY.value():
             echo "PROPERTY: $version"
             break;
-        case IConstants.PipelineVersion.ApiProxyGitflow:
+        case IConstants.PipelineVersion.ApiProxyGitflow.value():
             echo "ApiProxyGitflow: $version"
             break;
-        case IConstants.PipelineVersion.Deployment:
+        case IConstants.PipelineVersion.Deployment.value():
             echo "Deployment: $version"
             break;
-        case IConstants.PipelineVersion.ContIntegration:
+        case IConstants.PipelineVersion.ContIntegration.value():
             echo "ContIntegration: $version"
             break;
-        case IConstants.PipelineVersion.CIGraviton:
+        case IConstants.PipelineVersion.CIGraviton.value():
             echo "CIGraviton: $version"
             break;
-        case IConstants.PipelineVersion.DeployWar:
+        case IConstants.PipelineVersion.DeployWar.value():
             echo "DeployWar: $version"
             break;
-        case IConstants.PipelineVersion.MobileAndroid:
+        case IConstants.PipelineVersion.MobileAndroid.value():
             echo "MobileAndroid: $version"
             break;
-        case IConstants.PipelineVersion.MobileLib:
+        case IConstants.PipelineVersion.MobileLib.value():
             echo "MobileLib: $version"
             break;
-        case IConstants.PipelineVersion.GravitonPipeline:
+        case IConstants.PipelineVersion.GravitonPipeline.value():
             echo "GravitonPipeline: $version"
             break;
-        case IConstants.PipelineVersion.GravitonPipelineDeploy:
+        case IConstants.PipelineVersion.GravitonPipelineDeploy.value():
             echo "GravitonPipelineDeploy: $version"
             break;
-        case IConstants.PipelineVersion.FrontEndReact:
+        case IConstants.PipelineVersion.FrontEndReact.value():
             echo "FrontEndReact: $version"
             break;
-        case IConstants.PipelineVersion.BackendGo:
+        case IConstants.PipelineVersion.BackendGo.value():
             echo "BackendGo: $version"
             break;
     }
